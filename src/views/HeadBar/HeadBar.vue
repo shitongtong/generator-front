@@ -9,10 +9,8 @@
       <el-menu :default-active="activeIndex" class="el-menu-demo" 
           :background-color="themeColor" text-color="#fff" active-text-color="#ffd04b" mode="horizontal" @select="selectNavBar()">
         <el-menu-item index="1" @click="$router.push('/')"><i class="fa fa-home fa-2x"></i>  </el-menu-item>
-        <el-menu-item index="2" @click="openWindow('https://gitee.com/liuge1988/kitty-generator')">{{$t("common.projectRepo")}}</el-menu-item>
-        <el-menu-item index="3" @click="openWindow('https://gitee.com/liuge1988/kitty-generator/wikis/Home')">{{$t("common.doc")}}</el-menu-item>
-        <el-menu-item index="4" @click="openWindow('https://www.cnblogs.com/xifengxiaoma/')">{{$t("common.blog")}}</el-menu-item>
-      </el-menu>
+        <el-menu-item index="2" @click="openWindow('https://github.com/shitongtong/generator-front.git')">{{$t("common.projectRepo")}}</el-menu-item>
+       </el-menu>
     </span>
     <span class="tool-bar">
       <!-- 主题切换 -->
@@ -50,7 +48,7 @@ export default {
   },
   data() {
     return {
-      userName: "Louis",
+      userName: "stt",
       userAvatar: "",
       activeIndex: '1',
       datasourceDialogVisible: false
