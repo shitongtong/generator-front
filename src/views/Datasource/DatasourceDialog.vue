@@ -80,15 +80,20 @@ export default {
 		// 测试连接
 		testConn: function () {
             this.testLoading = true
-            axios.post(this.baseUrl + '/testConnection', this.form).then((res) => {
+            axios.post(this.baseUrl + '/testConnection', this.form)
+            .then((res) => {
                 res = res.data
-                if(res.code == 200) {
+                if(res.code === 0) {
                     this.$message({ message: '测试连接成功', type: 'success' })
                 } else {
-                    this.$message({message: res.msg, type: 'error'})
+                    this.$message({message: res.message, type: 'error'})
                 }
                 this.testLoading = false
-			})
+            })
+            .catch(err => {
+                this.testLoading = false;
+                this.$message.error('请求失败，请稍后再试！');
+            })
 		},
         handleClose(done) {
             this.visible = false
